@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+from route.routes import Router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
 
 origins = [
     "http://localhost",
@@ -16,8 +18,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(...)
+app.include_router(Router)
 
-@app.get("/")
-def read_root():
-    return  "Hello Welcome to my Chatbot PDF"
