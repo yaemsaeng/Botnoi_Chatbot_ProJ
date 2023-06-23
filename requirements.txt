@@ -3,3 +3,5 @@ fastapi
 firebase_admin
 pydantic
 pymongo
+python-multipart
+PyPDF2
