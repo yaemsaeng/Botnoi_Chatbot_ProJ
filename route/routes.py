@@ -24,7 +24,9 @@ async def create_upload_file(data: insert_base64):
     
     # อัปโหลดไฟล์ PDF เข้าสู่ Firebase Storage
     randoms = file_base64[11 : 21]
+
     # randoms = random.choices('abcdefghijklmnopqrstuvwxyz', k = 10)
+    
     blob = bucket.blob(f"pdf/{randoms}.pdf")
     blob.upload_from_string(file_data, content_type='application/pdf')
     
