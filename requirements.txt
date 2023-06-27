@@ -5,3 +5,9 @@ pydantic
 pymongo
 python-multipart
 PyPDF2
+python-jose
+passlib
+bcrypt
+google-auth 
+google-auth-oauthlib
+itsdangerous
