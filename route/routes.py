@@ -5,7 +5,6 @@ import base64
 from model.models import insert_base64
 import requests
 
-
 Router = APIRouter()
 
 cred = credentials.Certificate("./firebase/chatbotnoipdf-firebase-adminsdk-kqkcv-6855ab9086.json")
@@ -38,7 +37,8 @@ async def create_upload_file(data: insert_base64):
 def get_chat_response(query: str, customer_id: str):
     url = f"https://mekhav-2e2xbtpg2q-uc.a.run.app/chatgptresponse?query={query}&customer_id={customer_id}"
     response = requests.get(url)
-    return response.text
+    json_data = response.json()
+    return json_data
 
 
 
