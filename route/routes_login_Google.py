@@ -30,7 +30,7 @@ def login_is_required(func):
         return await func(request, *args, **kwargs)
     return wrapper
 
-@app.get("/login")
+@app.get("/google/login")
 async def login(request: StarletteRequest):
     authorization_url, state = flow.authorization_url()
     request.session["state"] = state
@@ -56,13 +56,13 @@ async def callback(request: StarletteRequest):
 
     request.session["google_id"] = id_info.get("sub")
     request.session["name"] = id_info.get("name")
-    return RedirectResponse("/protected_area")
-
-@app.get("/logout")
-async def logout(request: StarletteRequest):
-    request.session.clear()
     return RedirectResponse("/")
 
-@app.get("/protected_area")
-async def protected_area(request: StarletteRequest):
-    return f"Hello {request.session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"
+# @app.get("/logout")
+# async def logout(request: StarletteRequest):
+#     request.session.clear()
+#     return RedirectResponse("/")
+
+# @app.get("/protected_area")
+# async def protected_area(request: StarletteRequest):
+#     return f"Hello {request.session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"
