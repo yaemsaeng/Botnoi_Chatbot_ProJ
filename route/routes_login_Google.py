@@ -36,7 +36,7 @@ async def login(request: StarletteRequest):
     request.session["state"] = state
     return RedirectResponse(authorization_url)
 
-@app.get("/callback")
+@app.get("/google/callback")
 async def callback(request: StarletteRequest):
     flow.fetch_token(authorization_response=str(request.url))
 
