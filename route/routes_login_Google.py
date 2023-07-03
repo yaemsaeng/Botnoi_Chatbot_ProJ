@@ -14,7 +14,7 @@ from pathlib import Path
 from config.db import collection_account
 
 app = FastAPI()
-Router = APIRouter()
+RouterGoogle = APIRouter()
 
 app.add_middleware(SessionMiddleware, secret_key="dVu9jfC1PPVGRkq-X5nKaP_vDHC63CxQ2K4W0QVpFJo", session_cookie="user_session")
 
