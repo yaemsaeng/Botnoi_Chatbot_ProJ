@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from route.routes import Router
 from fastapi.middleware.cors import CORSMiddleware
-
+from route.routes_login_Google import app
 app = FastAPI()
 
 
@@ -19,4 +19,4 @@ app.add_middleware(
 )
 
 app.include_router(Router)
-
+app.include_router(app)
