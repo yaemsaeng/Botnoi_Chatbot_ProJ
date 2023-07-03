@@ -1,7 +1,7 @@
 uvicorn
 fastapi
 firebase_admin
-pydantic
+
 pymongo
 python-multipart
 PyPDF2
@@ -11,3 +11,7 @@ bcrypt
 google-auth 
 google-auth-oauthlib
 itsdangerous
+
+python-dotenv
+wraps
+pyjwt==1.7.1

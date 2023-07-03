@@ -14,9 +14,7 @@ from pathlib import Path
 from config.db import collection_account
 
 app = FastAPI()
-RouterGoogle = APIRouter()
-
-
+Router = APIRouter()
 app.add_middleware(SessionMiddleware, secret_key="dVu9jfC1PPVGRkq-X5nKaP_vDHC63CxQ2K4W0QVpFJo", session_cookie="user_session")
 
 client_secrets_file = "client_secret.json"
@@ -85,8 +83,3 @@ async def callback(request: StarletteRequest):
 # @app.get("/protected_area")
 # async def protected_area(request: StarletteRequest):
 #     return f"Hello {request.session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"
-
-
-# @app.get("/")
-# async def index():
-#     return "Hello World <a href='/login'><button>Login</button></a>"
