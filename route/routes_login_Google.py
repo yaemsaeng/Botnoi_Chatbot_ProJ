@@ -63,8 +63,8 @@ async def callback(request: StarletteRequest):
     request.session["name"] = id_info.get("name")
 
     query_params = {
-    "google_id": id_info.get("sub"),
-    "name": id_info.get("name")
+        "google_id": id_info.get("sub"),
+        "name": id_info.get("name")
     }
 
     redirect_url = "http://localhost:4200/?" + "&".join(f"{key}={value}" for key, value in query_params.items())
