@@ -19,4 +19,4 @@ app.add_middleware(
 )
 
 app.include_router(Router)
-app.mount("/api", routes_app)
+app.include_router(RouterGoogle)
