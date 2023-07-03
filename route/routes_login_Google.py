@@ -75,11 +75,4 @@ async def callback(request: StarletteRequest):
     return RedirectResponse(redirect_url)
 
 
-# @app.get("/logout")
-# async def logout(request: StarletteRequest):
-#     request.session.clear()
-#     return RedirectResponse("/")
 
-# @app.get("/protected_area")
-# async def protected_area(request: StarletteRequest):
-#     return f"Hello {request.session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"
