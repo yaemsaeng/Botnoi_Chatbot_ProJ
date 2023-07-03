@@ -11,7 +11,6 @@ import requests
 import os
 from pathlib import Path
 
-
 from config.db import collection_account
 
 app = FastAPI()
