@@ -115,7 +115,6 @@ async def update_chat_name(data:update_chat_name,customer_id: str,chat_name:str)
          "$set": dict(data)
         })
 
-
 @Router.delete("/delete" ,tags=["data_delete"])
 async def delete(customer_id: str,chat_name:str):
     collection.find_one_and_delete({"customer_id": customer_id, "chat_name": chat_name})
