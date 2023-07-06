@@ -13,9 +13,9 @@ cred = credentials.Certificate("./firebase/chatbotnoipdf-firebase-adminsdk-kqkcv
 firebase_admin.initialize_app(cred, {'storageBucket': 'chatbotnoipdf.appspot.com'})
 bucket = storage.bucket()
 
-@Router.get("/")
-def read_root():
-    return  "Hello Welcome to my Chatbot PDF"
+# @Router.get("/")
+# def read_root():
+#     return  "Hello Welcome to my Chatbot PDF"
 
 @Router.post("/Upload_PDF_base64", tags=["Upload PDF"])
 async def create_upload_file(data: insert_base64):
